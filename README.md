@@ -24,8 +24,10 @@ Manejare una API en airteble o firebase.
 2. La receta es original.
 3. Resumen
 4. Imagen
-5. Paso a paso para elaborar a receta.
-6. Recursos, si tiene.
+5. Ingredientes
+6. Paso a paso para elaborar a receta.
+7. Mi calificacion
+8. Recursos, si tiene.
 
 > [!TIP]
 > El diseño estara en FIGMA
