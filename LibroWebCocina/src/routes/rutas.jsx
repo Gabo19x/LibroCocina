@@ -1,9 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import Home from "../pages/home";
+
 const rutas = createBrowserRouter([
     {
         path: "/",
-        element: <div>Menu</div>,
+        element: <Home></Home>,
         errorElement: <div>Error 404</div>
     },
     {
