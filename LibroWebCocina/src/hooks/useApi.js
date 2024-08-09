@@ -18,8 +18,9 @@ function UseApi() {
 
             setData(records);
             setCargando(false);
+            
         }
-
+        
         GetRecords();
     }
 
@@ -31,7 +32,7 @@ function UseApi() {
         }
     }, []);
 
-    return data;
+    return {data, cargando};
 }
 
 export default UseApi;
