@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Home from "../pages/home";
+import ComidaPagina from "../pages/comidapage";
 
 const rutas = createBrowserRouter([
     {
@@ -10,11 +11,10 @@ const rutas = createBrowserRouter([
     },
     {
         path: "/comida",
-        element: <div>Comida</div>,
         children: [
             {
                 path: ":id",
-                element: <div>####</div>
+                element: <ComidaPagina/>
             }
         ]
     }

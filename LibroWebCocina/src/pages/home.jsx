@@ -4,23 +4,19 @@ import UseApi from "../hooks/useApi";
 import Header from "../components/generales/header";
 import Footer from "../components/generales/footer";
 import Paginacion from "../components/especificos/paginacion";
+import Comida from "../components/especificos/comida";
 
 export default function Home() {
     const {data, cargando} = UseApi();
     
     const listaObjetos = data.map((record) => (
-        
-        <div key={`food-${record.get("Id")}`}>
-            <p>{record.get("Titulo")}</p>
-            <p>{record.get("Receta")}</p>
-            <img src={record.get("Imagen") == undefined ? "_" : record.get("Imagen")[0].url} alt="Imagen de comida" />
-            <p>{record.get("Resumen") }</p>
-            <br />
-        </div>
+        <Comida 
+            tipo={true}
+            comida={record}
+        />
     ));
     
     return(
-
         <>
             <Header principal={true} />
         
@@ -32,8 +28,8 @@ export default function Home() {
 
                 <section>
                     { 
-                       cargando 
-                       ? <h2>🥪 Cargando comida...</h2>
+                       ( cargando )
+                       ? <h3>🥪 Cargando comida...</h3>
                        : <Paginacion elementos={listaObjetos} />
                     }
                     
@@ -42,6 +38,5 @@ export default function Home() {
             
             <Footer/>
         </>
-        
     );
 }
