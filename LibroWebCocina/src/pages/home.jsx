@@ -5,6 +5,7 @@ import Header from "../components/generales/header";
 import Footer from "../components/generales/footer";
 import Paginacion from "../components/especificos/paginacion";
 import Comida from "../components/especificos/comida";
+import Buscador from "../components/especificos/buscador";
 
 export default function Home() {
     const {data, cargando} = UseApi();
@@ -26,7 +27,11 @@ export default function Home() {
                     de recetas. Para ser actualizado o consultado en diferentes ocasiones.
                 </p>
 
+                <Buscador/>
+                
                 <section>
+                    <h2>Recetas publicadas</h2>
+
                     { 
                        ( cargando )
                        ? <h3>🥪 Cargando comida...</h3>
@@ -34,6 +39,7 @@ export default function Home() {
                     }
                     
                 </section>
+
             </main>
             
             <Footer/>

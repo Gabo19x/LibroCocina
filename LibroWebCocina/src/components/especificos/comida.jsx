@@ -6,7 +6,7 @@ export default function Comida({tipo, comida}) {
     const navegar = useNavigate();
 
     function VerComida(id) {
-        navegar(`/comida/${comida.get("Id")}`);
+        navegar(`/comida/${id}`);
     }
 
     if(tipo) {
@@ -14,8 +14,10 @@ export default function Comida({tipo, comida}) {
             <section key={`food-${comida.get("Id")}`}>
                 
                 <h3>{comida.get("Titulo")}</h3>
-                <img src={comida.get("Imagen") == undefined ? "_" : comida.get("Imagen")[0].url} alt="Imagen de comida" />
-                <p>{comida.get("Receta")}</p>
+                <div>
+                    <img src={comida.get("Imagen") == undefined ? "_" : comida.get("Imagen")[0].url} alt="Imagen de comida" />
+                    <p>{comida.get("Receta")}</p>
+                </div>
 
                 <button onClick={() => { VerComida(comida.get("Id")); }}>Ver más</button>
                 <br />
@@ -25,7 +27,7 @@ export default function Comida({tipo, comida}) {
     } else {
         return(
             <main>
-                <h3>{comida.get("Titulo")}</h3>
+                <h2>{comida.get("Titulo")}</h2>
 
                 <div>
                     <img src={comida.get("Imagen") == undefined ? "_" : comida.get("Imagen")[0].url} alt="Imagen de comida" />

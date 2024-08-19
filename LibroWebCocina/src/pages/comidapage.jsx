@@ -1,10 +1,10 @@
 import {useParams} from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import UseApi from "../hooks/useApi";
 import Header from "../components/generales/header";
 import Footer from "../components/generales/footer";
 import Comida from "../components/especificos/comida";
-import { useEffect, useState } from "react";
 
 export default function ComidaPagina() {
     const {id} = useParams();
@@ -13,10 +13,7 @@ export default function ComidaPagina() {
 
     useEffect(() => {
         const filtro = data.find((record) => record.get("Id") == id );
-        const algo = data.map((record) => console.log(`${record.get("Id")} =? ${id}`) );
         
-        
-
         if(filtro) {
             setObjFiltrado(
                 <Comida
@@ -27,6 +24,7 @@ export default function ComidaPagina() {
         } else {
             console.log("No se encontro la comida :C");
         }
+
     }, [data]);
 
     return(
