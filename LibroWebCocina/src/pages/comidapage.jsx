@@ -33,7 +33,7 @@ export default function ComidaPagina() {
 
             {
                 (cargando)
-                ? <h3>🥪 Cargando comida...</h3>
+                ? <h3 className="Mensaje_cargando">🥪 Cargando comida...</h3>
                 : objFiltrado
             }
 

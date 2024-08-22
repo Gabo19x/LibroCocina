@@ -1,0 +1,24 @@
+@import "../globales.scss";
+
+footer {
+    @include ImagenBack("../../assets/ImagenFondoComida.svg", black);
+    background-color: $color-negro;
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+
+    padding: $espacio-grande $espacio-normal $espacio-peque $espacio-normal;
+    margin-top: $espacio-grande;
+
+    h3 {
+        color: $color-blanco;
+
+        a {
+            text-decoration: none;
+            color: $color-secundario;
+            cursor: pointer;
+        }
+    }
+}

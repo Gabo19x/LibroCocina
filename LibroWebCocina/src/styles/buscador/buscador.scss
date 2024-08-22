@@ -1,0 +1,52 @@
+@import "../globales.scss";
+
+.Buscador {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+
+    box-shadow: 0 5px 5px #0000004d;
+    border: 1px solid $color-gris;
+
+    padding: $espacio-normal;
+    margin-top: 50px;
+
+    height: 500px;
+
+    form {
+        width: 90%;
+
+        div {
+            display: flex;
+            flex-direction: row;
+
+            h3 {
+                margin-right: 15px;
+            }
+
+            input {
+                width: 100%;
+            }
+        }
+
+        button {
+            margin: $espacio-normal 0;
+        }
+
+        hr {
+            margin-bottom: $espacio-grande;
+        }
+    }
+}
+
+.Buscador_resultado {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 5px;
+
+    margin-bottom: $espacio-normal;
+    width: 90%;
+
+    // background-color: $color-gris;
+}

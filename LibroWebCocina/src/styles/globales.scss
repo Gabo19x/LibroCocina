@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+$color-primario: #BE0000;
+$color-primario-blur: #be0000ce;
+
+$color-secundario: #BADEFF;
+$color-secundario-oscuro: #6db8ff;
+
+$color-terciario: #04BE00;
+$color-terciario-blur: #03be00cb;
+
+$color-blanco: white;
+$color-negro: #202020;
+$color-gris: rgb(231, 231, 231);
+
+$font-encabezado: "Rock Salt", cursive;
+$font-pagina: "Roboto", sans-serif;
+
+$tamaño-encabezado: 60px;
+$tamaño-titulo: 30px;
+$tamaño-subtitulo: 20px;
+$tamaño-parrafo: 18px;
+
+$espacio-grande:60px;
+$espacio-normal: 20px;
+$espacio-peque: 10px;
+
+$borde: 15px;
+
+// Globales
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-pagina;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+h1 {
+    font-family: $font-encabezado;
+    font-size: $tamaño-encabezado;
+}
+
+h2 { font-size: $tamaño-titulo; }
+h3 { font-size: $tamaño-subtitulo; }
+p { font-size: $tamaño-parrafo; }
+
+@mixin ImagenBack($url, $color) {
+    background-color: $color;
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    z-index: -1; 
+}
+
+// Mensajes
+.Mensaje_cargando {
+    margin: $espacio-grande $espacio-normal;
+    padding: $espacio-normal;
+
+    display: block;
+    background-color: $color-gris;
+
+    align-items: center;
+    text-align: center;
+    border-radius: $borde;
+}
+
+.Mensaje_error {
+    margin: $espacio-grande $espacio-normal;
+    padding: $espacio-normal;
+
+    display: block;
+    background-color: $color-primario;
+    color: $color-blanco;
+
+    align-items: center;
+    text-align: center;
+    border-radius: $borde;
+}
+
+// Tipo de receta
+.Receta_publica {
+    background-color: $color-terciario-blur;
+    color: $color-blanco;
+    border-radius: 30px 0 0 0;
+    font-weight: bold;
+
+    padding: $espacio-peque;
+}
+
+.Receta_propia {
+    background-color: $color-primario-blur;
+    color: $color-blanco;
+    border-radius: 30px 0 0 0;
+    font-weight: bold;
+
+    padding: $espacio-peque;
+}
+
+// Botones
+button {
+    border: none;
+
+    &:hover { cursor: pointer; }
+}
+
+.Boton_ver_mas {
+    background-color: $color-secundario;
+    padding: $espacio-peque $espacio-grande;
+    color: $color-negro;
+    font-weight: bold;
+
+    border-radius: $borde;
+    border: 3px solid $color-secundario;
+    
+    &:hover {
+        
+        border: 3px solid $color-secundario-oscuro;
+    }
+}
+
+.Boton_ver_mas_reducido {
+    background-color: $color-terciario;
+    padding: 5px;
+    color: $color-negro;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 100%;
+    border: 3px solid $color-terciario;
+    
+    &:hover {
+        background-color: $color-terciario-blur;
+        border: 3px solid $color-terciario-blur;
+    }
+}
+
+.Boton_form {
+    background-color: $color-secundario;
+    padding: 5px $espacio-grande;
+    color: $color-negro;
+    font-weight: bold;
+    width: 100%;
+
+    border-radius: 5px;
+    border: 3px solid $color-secundario;
+    
+    &:hover {
+        
+        border: 3px solid $color-secundario-oscuro;
+    }
+}
+
+.Boton_menu {
+    background-color: transparent;
+    color: $color-blanco;
+    border: 3px solid $color-blanco;
+    border-radius: $borde;
+
+    padding: $espacio-peque $espacio-normal;
+
+    &:hover {
+        background-color: white;
+        color: $color-negro;
+    }
+}

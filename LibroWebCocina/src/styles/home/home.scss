@@ -1,0 +1,47 @@
+@import "../globales.scss";
+
+.Home_main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin: 0 $espacio-normal;
+
+    .Home_main_parrafo {
+        margin-bottom: $espacio-grande;
+
+        hr {
+            height: 3px;
+            background-color: $color-negro;
+            margin-top: $espacio-peque;
+        }
+    }
+
+    .Home_main_grid {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: $espacio-peque;
+        
+
+        .Paginacion {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .Buscador {
+            grid-column: 2;
+        }
+    }
+}
+
+.Paginacion {
+    h2 { margin-bottom: $espacio-normal; }
+
+    .Paginacion_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $espacio-peque;
+        row-gap: $espacio-normal;
+    }
+}

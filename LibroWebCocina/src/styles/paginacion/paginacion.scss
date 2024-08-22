@@ -1,0 +1,57 @@
+@import "../globales.scss";
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: $espacio-normal;
+
+    width: 200%;
+
+    list-style: none;
+
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        width: 40px;
+        height: 40px;
+
+        border: 3px solid $color-secundario;
+
+        &:hover {
+            background-color: $color-secundario;
+            border: 3px solid $color-secundario-oscuro;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+.previous {
+    border-radius: $borde 0 0 $borde;
+}
+
+.next {
+    border-radius: 0 $borde $borde 0;
+}
+
+.disabled {
+    display: none;
+}
+
+.selected {
+    background-color: $color-secundario;
+    border: 3px solid $color-secundario-oscuro;
+    font-weight: bold;
+}

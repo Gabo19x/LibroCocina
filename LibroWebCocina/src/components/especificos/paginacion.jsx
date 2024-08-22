@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 
-const elementosPorPagina = 2;
+import "../../styles/paginacion/paginacion.css"
+
+const elementosPorPagina = 6;
 
 export default function Paginacion({ elementos }) { 
     
@@ -20,16 +22,16 @@ export default function Paginacion({ elementos }) {
             
             {(elementosActuales != null)
                 ? elementosActuales
-                : <div>❌ No hay elementos para mostrar ❌</div>
+                : <p className='Mensaje_error'>❌ No hay elementos para mostrar ❌</p>
             }
             
             <ReactPaginate
                 breakLabel="°°°"
-                nextLabel="->"
+                nextLabel="🢂"
                 onPageChange={handlePaginaClick}
                 pageRangeDisplayed={5}
                 pageCount={pageCount}
-                previousLabel="<-"
+                previousLabel="🢀"
                 renderOnZeroPageCount={null}
             />
         </>

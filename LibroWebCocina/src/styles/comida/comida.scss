@@ -1,0 +1,95 @@
+@import "../globales.scss";
+
+// CARD pequeña
+.Card_comida_menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    box-shadow: 0 5px 5px #0000004d;
+    border: 1px solid $color-gris;
+
+    padding: $espacio-normal;
+    background-color: rgb(247, 247, 247);
+
+    h3 {
+        margin-bottom: $espacio-peque;
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    img {
+        max-height: 600px;
+        max-width: 600px;
+      
+        mask-image: linear-gradient(
+            transparent 0.1%,
+            black 5%,
+        );
+    }
+    
+}
+
+.Contenedor_imagen {
+    position: relative;
+    display: inline-block;
+
+    margin-bottom: $espacio-normal;
+    
+    img {
+        display: block;
+    }
+
+    p {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+// CARD grande
+.Card_comida {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 0 $espacio-normal;
+
+    h2 {
+        font-family: $font-encabezado;
+    }
+
+    div {
+        margin-bottom: $espacio-grande;
+
+        img {
+            max-height: 800px;
+        }
+    }
+
+    h3 {
+        margin-bottom: $espacio-normal;
+    }
+
+    p:not(.Receta_publica, .Receta_propia) {
+        margin-bottom: $espacio-grande;
+    }
+
+    hr {
+        height: 3px;
+        width: 80%;
+        background-color: $color-negro;
+        margin-top: 10px;
+    }
+
+    .Parrafo_recursos {
+        font-style: italic;
+    }
+}

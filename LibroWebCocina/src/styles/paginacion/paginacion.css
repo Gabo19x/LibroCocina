@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: "Rock Salt", cursive;
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.Mensaje_cargando {
+  margin: 60px 20px;
+  padding: 20px;
+  display: block;
+  background-color: rgb(231, 231, 231);
+  align-items: center;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.Mensaje_error {
+  margin: 60px 20px;
+  padding: 20px;
+  display: block;
+  background-color: #BE0000;
+  color: white;
+  align-items: center;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.Receta_publica {
+  background-color: rgba(3, 190, 0, 0.7960784314);
+  color: white;
+  border-radius: 30px 0 0 0;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.Receta_propia {
+  background-color: rgba(190, 0, 0, 0.8078431373);
+  color: white;
+  border-radius: 30px 0 0 0;
+  font-weight: bold;
+  padding: 10px;
+}
+
+button {
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+}
+
+.Boton_ver_mas {
+  background-color: #BADEFF;
+  padding: 10px 60px;
+  color: #202020;
+  font-weight: bold;
+  border-radius: 15px;
+  border: 3px solid #BADEFF;
+}
+.Boton_ver_mas:hover {
+  border: 3px solid #6db8ff;
+}
+
+.Boton_ver_mas_reducido {
+  background-color: #04BE00;
+  padding: 5px;
+  color: #202020;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  border: 3px solid #04BE00;
+}
+.Boton_ver_mas_reducido:hover {
+  background-color: rgba(3, 190, 0, 0.7960784314);
+  border: 3px solid rgba(3, 190, 0, 0.7960784314);
+}
+
+.Boton_form {
+  background-color: #BADEFF;
+  padding: 5px 60px;
+  color: #202020;
+  font-weight: bold;
+  width: 100%;
+  border-radius: 5px;
+  border: 3px solid #BADEFF;
+}
+.Boton_form:hover {
+  border: 3px solid #6db8ff;
+}
+
+.Boton_menu {
+  background-color: transparent;
+  color: white;
+  border: 3px solid white;
+  border-radius: 15px;
+  padding: 10px 20px;
+}
+.Boton_menu:hover {
+  background-color: white;
+  color: #202020;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+  width: 200%;
+  list-style: none;
+}
+ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #BADEFF;
+}
+ul li:hover {
+  background-color: #BADEFF;
+  border: 3px solid #6db8ff;
+}
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.previous {
+  border-radius: 15px 0 0 15px;
+}
+
+.next {
+  border-radius: 0 15px 15px 0;
+}
+
+.disabled {
+  display: none;
+}
+
+.selected {
+  background-color: #BADEFF;
+  border: 3px solid #6db8ff;
+  font-weight: bold;
+}/*# sourceMappingURL=paginacion.css.map */

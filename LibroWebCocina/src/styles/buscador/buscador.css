@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: "Rock Salt", cursive;
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.Mensaje_cargando {
+  margin: 60px 20px;
+  padding: 20px;
+  display: block;
+  background-color: rgb(231, 231, 231);
+  align-items: center;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.Mensaje_error {
+  margin: 60px 20px;
+  padding: 20px;
+  display: block;
+  background-color: #BE0000;
+  color: white;
+  align-items: center;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.Receta_publica {
+  background-color: rgba(3, 190, 0, 0.7960784314);
+  color: white;
+  border-radius: 30px 0 0 0;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.Receta_propia {
+  background-color: rgba(190, 0, 0, 0.8078431373);
+  color: white;
+  border-radius: 30px 0 0 0;
+  font-weight: bold;
+  padding: 10px;
+}
+
+button {
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+}
+
+.Boton_ver_mas {
+  background-color: #BADEFF;
+  padding: 10px 60px;
+  color: #202020;
+  font-weight: bold;
+  border-radius: 15px;
+  border: 3px solid #BADEFF;
+}
+.Boton_ver_mas:hover {
+  border: 3px solid #6db8ff;
+}
+
+.Boton_ver_mas_reducido {
+  background-color: #04BE00;
+  padding: 5px;
+  color: #202020;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  border: 3px solid #04BE00;
+}
+.Boton_ver_mas_reducido:hover {
+  background-color: rgba(3, 190, 0, 0.7960784314);
+  border: 3px solid rgba(3, 190, 0, 0.7960784314);
+}
+
+.Boton_form {
+  background-color: #BADEFF;
+  padding: 5px 60px;
+  color: #202020;
+  font-weight: bold;
+  width: 100%;
+  border-radius: 5px;
+  border: 3px solid #BADEFF;
+}
+.Boton_form:hover {
+  border: 3px solid #6db8ff;
+}
+
+.Boton_menu {
+  background-color: transparent;
+  color: white;
+  border: 3px solid white;
+  border-radius: 15px;
+  padding: 10px 20px;
+}
+.Boton_menu:hover {
+  background-color: white;
+  color: transparent;
+}
+
+.Buscador {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3019607843);
+  border: 1px solid rgb(231, 231, 231);
+  padding: 20px;
+  margin-top: 50px;
+  height: 500px;
+}
+.Buscador form {
+  width: 90%;
+}
+.Buscador form div {
+  display: flex;
+  flex-direction: row;
+}
+.Buscador form div h3 {
+  margin-right: 15px;
+}
+.Buscador form div input {
+  width: 100%;
+}
+.Buscador form button {
+  margin: 20px 0;
+}
+.Buscador form hr {
+  margin-bottom: 60px;
+}
+
+.Buscador_resultado {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 5px;
+  margin-bottom: 20px;
+  width: 90%;
+}/*# sourceMappingURL=buscador.css.map */

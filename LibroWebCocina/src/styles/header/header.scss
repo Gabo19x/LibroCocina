@@ -1,0 +1,35 @@
+@import "../globales.scss";
+
+header {
+    @include ImagenBack("../../assets/ImagenFondoComida.svg", black);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-bottom: $espacio-grande;
+    padding: $espacio-normal;
+
+    h1, h2 { color: $color-blanco; }
+}
+
+.Header_principal {
+    min-height: 700px;
+    gap: 50px;
+    
+    hr {
+        height: 10px;
+        width: 90%;
+        color: $color-primario;
+        background-color: $color-primario;
+    }
+      
+}
+
+.Header_secundario {
+    min-height: 200px;
+    gap: 30px;
+
+    h2 { font-family: $font-encabezado; }
+}
