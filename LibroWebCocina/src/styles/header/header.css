@@ -137,8 +137,11 @@ header {
   margin-bottom: 60px;
   padding: 20px;
 }
-header h1, header h2 {
+header h1, header h2, header h3 {
   color: white;
+}
+header h3 {
+  font-family: "Rock Salt", cursive;
 }
 
 .Header_principal {

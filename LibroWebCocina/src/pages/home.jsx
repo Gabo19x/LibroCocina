@@ -25,7 +25,7 @@ export default function Home() {
         
             <main className="Home_main">
                 <p className="Home_main_parrafo">
-                    Mi libro de cocina, es un lugar para compartir mis recetas, pero principalmente, para tener a la mano un libro
+                    Mi libro de cocina <span>El jardin culinario</span>, es un lugar para compartir mis recetas, pero principalmente, para tener a la mano un libro
                     de recetas. Para ser actualizado o consultado en diferentes ocasiones.
                     <hr />
                 </p>

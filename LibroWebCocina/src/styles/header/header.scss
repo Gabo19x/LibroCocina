@@ -11,7 +11,8 @@ header {
     margin-bottom: $espacio-grande;
     padding: $espacio-normal;
 
-    h1, h2 { color: $color-blanco; }
+    h1, h2, h3 { color: $color-blanco; }
+    h3 { font-family: $font-encabezado; }
 }
 
 .Header_principal {

@@ -48,6 +48,12 @@ h2 { font-size: $tamaño-titulo; }
 h3 { font-size: $tamaño-subtitulo; }
 p { font-size: $tamaño-parrafo; }
 
+span {
+    font-size: $tamaño-parrafo;
+    font-weight: bolder;
+    color: $color-primario;
+}
+
 @mixin ImagenBack($url, $color) {
     background-color: $color;
     background-image: url($url);
