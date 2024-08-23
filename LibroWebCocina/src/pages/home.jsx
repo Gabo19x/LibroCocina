@@ -37,7 +37,7 @@ export default function Home() {
                     <div className="Paginacion">
                         <h2>Recetas publicadas</h2>
 
-                        <section className="Paginacion_grid">
+                        <section className="Paginacion_flex">
                             { 
                                 ( cargando )
                                 ? <h3 className="Mensaje_cargando">🥪 Cargando comida...</h3>

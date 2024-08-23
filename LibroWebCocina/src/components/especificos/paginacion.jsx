@@ -19,21 +19,25 @@ export default function Paginacion({ elementos }) {
 
     return (
         <>
+            <section className='Paginacion_flex_elementos'>
+                {(elementosActuales != null)
+                    ? elementosActuales
+                    : <p className='Mensaje_error'>❌ No hay elementos para mostrar ❌</p>
+                }
+            </section>
             
-            {(elementosActuales != null)
-                ? elementosActuales
-                : <p className='Mensaje_error'>❌ No hay elementos para mostrar ❌</p>
-            }
+            <div className='Paginacion_flex_pag'>
+                <ReactPaginate
+                    breakLabel="°°°"
+                    nextLabel="🢂"
+                    onPageChange={handlePaginaClick}
+                    pageRangeDisplayed={5}
+                    pageCount={pageCount}
+                    previousLabel="🢀"
+                    renderOnZeroPageCount={null}
+                />
+            </div>
             
-            <ReactPaginate
-                breakLabel="°°°"
-                nextLabel="🢂"
-                onPageChange={handlePaginaClick}
-                pageRangeDisplayed={5}
-                pageCount={pageCount}
-                previousLabel="🢀"
-                renderOnZeroPageCount={null}
-            />
         </>
             
             

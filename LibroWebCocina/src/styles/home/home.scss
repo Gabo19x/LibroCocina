@@ -38,10 +38,20 @@
 .Paginacion {
     h2 { margin-bottom: $espacio-normal; }
 
-    .Paginacion_grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: $espacio-peque;
-        row-gap: $espacio-normal;
+    .Paginacion_flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        
+        .Paginacion_flex_elementos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: $espacio-normal;
+        }
+
+        .Paginacion_flex_pag {
+            margin-top: $espacio-grande;
+        }
     }
 }
