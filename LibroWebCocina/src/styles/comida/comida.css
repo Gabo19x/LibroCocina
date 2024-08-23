@@ -147,6 +147,15 @@ button:hover {
   -webkit-mask-image: linear-gradient(transparent 0.1%, black 5%);
           mask-image: linear-gradient(transparent 0.1%, black 5%);
 }
+@media (max-width: 768px) {
+  .Card_comida_menu {
+    width: 100%;
+  }
+  .Card_comida_menu img {
+    max-height: 300px;
+    max-width: 300px;
+  }
+}
 
 .Contenedor_imagen {
   position: relative;
@@ -168,6 +177,11 @@ button:hover {
   justify-content: center;
   flex-direction: column;
   padding: 0 100px;
+}
+@media (max-width: 768px) {
+  .Card_comida img {
+    width: 100%;
+  }
 }
 .Card_comida h2 {
   font-family: "Rock Salt", cursive;

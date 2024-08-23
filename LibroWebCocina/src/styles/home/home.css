@@ -149,6 +149,14 @@ button:hover {
 .Home_main .Home_main_grid .Buscador {
   grid-column: 2;
 }
+@media (max-width: 768px) {
+  .Home_main .Home_main_grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
 
 .Paginacion h2 {
   margin-bottom: 20px;
@@ -163,6 +171,14 @@ button:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+}
+@media (max-width: 768px) {
+  .Paginacion .Paginacion_flex .Paginacion_flex_elementos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 .Paginacion .Paginacion_flex .Paginacion_flex_pag {
   margin-top: 60px;

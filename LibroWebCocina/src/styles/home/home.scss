@@ -18,6 +18,7 @@
         }
     }
 
+    // Home main MQ
     .Home_main_grid {
         display: grid;
         grid-template-columns: 3fr 1fr;
@@ -33,6 +34,15 @@
             grid-column: 2;
         }
     }
+
+    @media (max-width: 768px) {
+        .Home_main_grid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
 }
 
 .Paginacion {
@@ -44,10 +54,20 @@
         justify-content: center;
         flex-direction: column;
         
+        // Paginacion_flex_elementos MQ
         .Paginacion_flex_elementos {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: $espacio-normal;
+        }
+
+        @media (max-width: 768px) {
+            .Paginacion_flex_elementos {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
         }
 
         .Paginacion_flex_pag {

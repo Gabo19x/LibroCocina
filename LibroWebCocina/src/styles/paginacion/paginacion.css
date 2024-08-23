@@ -131,6 +131,11 @@ ul {
   width: 200%;
   list-style: none;
 }
+@media (max-width: 768px) {
+  ul {
+    width: 100%;
+  }
+}
 ul li {
   display: flex;
   align-items: center;

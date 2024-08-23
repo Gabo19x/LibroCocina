@@ -13,6 +13,13 @@
     margin-top: 50px;
 
     height: 500px;
+    width: 100%;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        max-height: 700px;
+        margin-bottom: $espacio-grande;
+    }
 
     form {
         width: 90%;

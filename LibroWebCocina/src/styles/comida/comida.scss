@@ -34,6 +34,14 @@
         );
     }
     
+    @media (max-width: 768px) {
+        width: 100%;
+
+        img {
+            max-height: 300px;
+            max-width: 300px;
+        }
+    }
 }
 
 .Contenedor_imagen {
@@ -61,6 +69,12 @@
     flex-direction: column;
 
     padding: 0 100px;
+
+    @media (max-width: 768px) {
+        img {
+            width: 100%;
+        }
+    }
 
     h2 {
         font-family: $font-encabezado;

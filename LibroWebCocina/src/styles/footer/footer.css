@@ -137,6 +137,7 @@ footer {
   justify-content: end;
   padding: 60px 20px 10px 20px;
   margin-top: 60px;
+  /* Media query Moviles */
 }
 footer h3 {
   color: white;
@@ -145,4 +146,9 @@ footer h3 a {
   text-decoration: none;
   color: #BADEFF;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  footer h3 {
+    font-size: 18px;
+  }
 }/*# sourceMappingURL=footer.css.map */
