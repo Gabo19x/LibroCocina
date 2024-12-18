@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
+import FormatearTexto from './formatearTexto';
 import "../../styles/comida/comida.css";
 
 // El tipo es, si es la presentacion en el Home una card.
@@ -40,10 +41,10 @@ export default function Comida({tipo, comida}) {
                 <p>{comida.get("Resumen")}</p>
 
                 <h3>🥗 Ingredientes 🥗</h3> 
-                <p>{comida.get("Ingredientes")}</p>
+                <FormatearTexto texto={comida.get("Ingredientes")}/>
 
                 <h3>🛠 Metodo de elaboración 🛠</h3>
-                <p>{comida.get("Elaboracion")}</p>
+                <FormatearTexto texto={comida.get("Elaboracion")}/>
                 
                 <br />
                 {

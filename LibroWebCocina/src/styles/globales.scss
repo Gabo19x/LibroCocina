@@ -54,6 +54,18 @@ span {
     color: $color-primario;
 }
 
+br {
+    height: 1000px;
+    width: 10px;
+    background-color: #BE0000;
+}
+
+.TextoFormateado {
+    .TextoFormateado_parte {
+        margin: 0;
+    }
+}
+
 @mixin ImagenBack($url, $color) {
     background-color: $color;
     background-image: url($url);

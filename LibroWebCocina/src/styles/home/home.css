@@ -33,6 +33,16 @@ span {
   color: #BE0000;
 }
 
+br {
+  height: 1000px;
+  width: 10px;
+  background-color: #BE0000;
+}
+
+.TextoFormateado .TextoFormateado_parte {
+  margin: 0;
+}
+
 .Mensaje_cargando {
   margin: 60px 20px;
   padding: 20px;
@@ -155,7 +165,7 @@ button:hover {
 .Home_main .Home_main_grid .Buscador {
   grid-column: 2;
 }
-@media (max-width: 768px) {
+@media (max-width: 1680px) {
   .Home_main .Home_main_grid {
     display: flex;
     align-items: center;
@@ -178,7 +188,7 @@ button:hover {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1400px) {
   .Paginacion .Paginacion_flex .Paginacion_flex_elementos {
     display: flex;
     align-items: center;

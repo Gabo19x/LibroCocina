@@ -80,7 +80,7 @@
         font-family: $font-encabezado;
     }
 
-    div {
+    div:not(.TextoFormateado_parrafo) {
         margin-bottom: $espacio-grande;
 
         img {
@@ -92,8 +92,13 @@
         margin-bottom: $espacio-normal;
     }
 
-    p:not(.Receta_publica, .Receta_propia) {
+    p:not(.Receta_publica, .Receta_propia, .TextoFormateado_parte) {
         margin-bottom: $espacio-grande;
+    }
+
+    .TextoFormateado_parrafo {
+        display: flex;
+        flex-direction: row;
     }
 
     hr {

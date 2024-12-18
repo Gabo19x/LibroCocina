@@ -35,7 +35,7 @@
         }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1680px) {
         .Home_main_grid {
             display: flex;
             align-items: center;
@@ -61,7 +61,7 @@
             gap: $espacio-normal;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1400px) {
             .Paginacion_flex_elementos {
                 display: flex;
                 align-items: center;
