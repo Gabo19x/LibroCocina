@@ -27,6 +27,10 @@ p {
   font-size: 18px;
 }
 
+label {
+  font-size: 30px;
+}
+
 span {
   font-size: 18px;
   font-weight: bolder;
@@ -145,6 +149,7 @@ button:hover {
   flex-direction: column;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3019607843);
   border: 1px solid rgb(231, 231, 231);
+  border-radius: 10px;
   padding: 20px;
   background-color: rgb(247, 247, 247);
 }

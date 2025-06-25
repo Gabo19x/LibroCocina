@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Home from "../pages/home";
 import ComidaPagina from "../pages/comidapage";
+import BusquedaAvanzada from "../pages/busqueda"
 
 const rutas = createBrowserRouter([
     {
@@ -17,6 +18,11 @@ const rutas = createBrowserRouter([
                 element: <ComidaPagina/>
             }
         ]
+    },
+    {
+        path:"/busqueda-avanzada",
+        element: <BusquedaAvanzada/>,
+        errorElement: <div>Error 404</div>
     }
     
 ]);

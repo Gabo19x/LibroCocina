@@ -11,6 +11,7 @@ export default function Header({principal}) {
                 <h3>Mi libro de cocina:</h3>
                 <h1>El jardin culinario</h1>
                 <hr />
+                <button className='Boton_menu' onClick={() => {navegar("/busqueda-avanzada")}}>Busqueda avanzada</button>
             </header>
         );
     } else {

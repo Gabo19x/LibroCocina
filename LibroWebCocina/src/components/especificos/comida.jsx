@@ -19,7 +19,7 @@ export default function Comida({tipo, comida}) {
                 <h3>{comida.get("Titulo")}</h3>
                 
                 <div className='Contenedor_imagen'>
-                    <img src={comida.get("Imagen") == undefined ? "_" : comida.get("Imagen")[0].url} alt="Imagen de comida" />
+                    <img src={comida.get("Imagen") == undefined ? "_" : comida.get("Imagen")[0].url} alt={comida.get("Titulo")} />
                     <p className={ (comida.get("Receta") == "Receta publica") ? "Receta_publica": "Receta_propia" }> {comida.get("Receta")} </p>
                 </div>
 
@@ -33,7 +33,7 @@ export default function Comida({tipo, comida}) {
                 <h2>🔹 {comida.get("Titulo")} 🔹</h2>
 
                 <div className='Contenedor_imagen'>
-                    <img src={comida.get("Imagen") == undefined ? "_" : comida.get("Imagen")[0].url} alt="Imagen de comida" />
+                    <img src={comida.get("Imagen") == undefined ? "_" : comida.get("Imagen")[0].url} alt={comida.get("Titulo")} />
                     <p className={ (comida.get("Receta") == "Receta publica") ? "Receta_publica": "Receta_propia" } > {comida.get("Receta")} </p>
                 </div>
 
@@ -45,12 +45,11 @@ export default function Comida({tipo, comida}) {
 
                 <h3>🛠 Metodo de elaboración 🛠</h3>
                 <FormatearTexto texto={comida.get("Elaboracion")}/>
-                
                 <br />
+
+                <h3>💬 Etiquetas</h3>
                 {
-                    (comida.get("Recursos") == null || comida.get("Recursos") == "...")
-                    ? <></>
-                    : <><h3>Recursos: </h3> <p className='Parrafo_recursos'>{comida.get("Recursos")}</p></>
+                    comida.get("Etiquetas").map((etiq) => (<span>{etiq}</span>))
                 }
             </main>
         );

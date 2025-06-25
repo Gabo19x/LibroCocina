@@ -16,6 +16,9 @@ mostrar gran cantidad de elementos.
 Cada receta tendra una imagen demostrativa, una descripcion.
 Y la receta, si es *propia o no*, ademas si es nesesario un enlace.
 
+### Busqueda avanzada
+Con etiquetas, se filtrara todos los productos.
+
 ## Arquitectura BD
 Manejare una API en airteble o firebase. 
 
@@ -26,7 +29,7 @@ Manejare una API en airteble o firebase.
 4. Imagen
 5. Ingredientes
 6. Paso a paso para elaborar a receta.
-7. Recursos, si tiene.
+7. Etiquetas.
 
 > [!TIP]
 > El diseño estara en FIGMA

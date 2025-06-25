@@ -1,0 +1,126 @@
+@import "../globales.scss";
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 $espacio-normal;
+
+
+}
+
+.Busqueda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $espacio-grande;
+
+    .Busqueda_seleccion {
+        display: flex;
+        flex-direction: column;
+        row-gap: $espacio-normal;
+
+        padding: 0 $espacio-normal;
+
+        label {
+            font-weight: bold;
+            color: $color-primario-blur;
+        }
+
+        select {
+            option {
+                background-color: $color-blanco;
+                border-radius: 0;
+            }
+        }
+    }
+
+    .Busqueda_etiquetas {
+        h3 { margin-bottom: $espacio-normal; }
+
+        article {
+            display: flex;
+            align-items: center;
+            gap: 1rem; /* Espacio entre el span y el p */
+            padding: 0.5rem 0;
+            border-bottom: 1px solid $color-gris;
+
+            span {
+                min-width: 140px; 
+                color: $color-negro;
+            }
+        }
+    }
+}
+
+.Busqueda_resultados {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: $espacio-grande 0;
+
+    /* Media query Moviles */
+    
+    .Resultados {
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: $espacio-peque;
+
+        margin-top: $espacio-normal;
+    }
+
+    @media (max-width: 1200px) {
+        .Resultados {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+// La carta
+.Avanzado {
+    
+    h3 {
+        margin-bottom: $espacio-peque;
+    }
+
+    img {
+        max-height: 200px;
+        max-width: 200px;
+    }
+    
+    @media (max-width: 1200px) {
+        width: 100%;
+
+        img {
+            max-height: 100px;
+            max-width: 100px;
+        }
+    }
+
+    .Contenedor_imagen {
+        p {
+            padding: 5px;
+            font-size: 70%;
+        }
+    }
+
+    .Contenedor_etiquetas {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+
+        margin: $espacio-normal 0;
+
+        span {
+            color: $color-negro;
+            font-size: 70%;
+        }
+    }
+}
