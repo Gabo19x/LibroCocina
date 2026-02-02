@@ -30,7 +30,7 @@ export default function Comida({tipo, comida}) {
     } else {
         return(
             <main className='Card_comida'>
-                <h2>🔹 {comida.get("Titulo")} 🔹</h2>
+                <h2>{comida.get("Titulo")}</h2>
 
                 <div className='Contenedor_imagen'>
                     <img src={comida.get("Imagen") == undefined ? "_" : comida.get("Imagen")[0].url} alt={comida.get("Titulo")} />
@@ -38,7 +38,7 @@ export default function Comida({tipo, comida}) {
                 </div>
 
                 <h3>🏆 Resumen 🏆</h3>
-                <p>{comida.get("Resumen")}</p>
+                <p className='Card_comida_parrafoResumen'>{comida.get("Resumen")}</p>
 
                 <h3>🥗 Ingredientes 🥗</h3> 
                 <FormatearTexto texto={comida.get("Ingredientes")}/>

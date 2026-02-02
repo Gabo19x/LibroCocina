@@ -93,6 +93,10 @@
         margin-bottom: $espacio-normal;
     }
 
+    .Card_comida_parrafoResumen {
+        width: 60%;
+    }
+
     p:not(.Receta_publica, .Receta_propia, .TextoFormateado_parte) {
         margin-bottom: $espacio-grande;
     }

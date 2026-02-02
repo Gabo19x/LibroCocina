@@ -51,6 +51,7 @@ export default function Busqueda() {
                             <option value="Almuerzo">🍖 Almuerzo</option>
                             <option value="Cena">🌯 Cena</option>
                             <option value="Cualquier momento">🍘 Cualquier momento</option>
+                            <option value="Acompañante">🍞 Acompañante</option>
 
                             <option value="Confort food">🌭 Confort food</option>
                             <option value="Heavy food">🥘 Heavy food</option>
@@ -91,6 +92,10 @@ export default function Busqueda() {
                         <article>
                             <span>🍘 Cualquier momento:</span>
                             <p>plato ideal para cualquier hora del día.</p>
+                        </article>
+                        <article>
+                            <span>🍞 Acompañante:</span>
+                            <p>opcion para acompañar un plato.</p>
                         </article>
                         
                         <article>

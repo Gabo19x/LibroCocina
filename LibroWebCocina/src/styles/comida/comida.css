@@ -216,6 +216,9 @@ button:hover {
 .Card_comida h3 {
   margin-bottom: 20px;
 }
+.Card_comida .Card_comida_parrafoResumen {
+  width: 60%;
+}
 .Card_comida p:not(.Receta_publica, .Receta_propia, .TextoFormateado_parte) {
   margin-bottom: 60px;
 }
