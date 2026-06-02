@@ -1,35 +1,19 @@
-# Libro de cocina, de Don Gabriel.
-Es una pagina web la cual mostrara mis recetas, mas que todo es *para ayudarme a tener*
-*y recordar recetas propias, o no propias.*
+# Mi jardín culinario
+## Objetivo de la pagina
+Es una pagina web la cual tiene como proposito **guardar recetas de cocina** de mi gusto o de mi autoria.
+Tambien que sea de facil acceso, y contara con inicio de sesion, con roles:
+- Admin: yo lo tendre, y podre modificar las recetas.
+- Usuario: podran ver y guardar favoritos.
 
-## Elaborada en:
-Esta hecha en **REACT, API** en airtable.
+## Ofrece
+Seccion general donde estan todas las recetas.
+Cada receta tiene su propia pagina para ver como se hace (tiene foto, ingredientes y pasos).
+Tambien habra un sistema de busqueda: directa y por etiquetas.
 
-## Arquitectura web.
-Es sencilla ya que el punto es ser directo, es decir mostrar las recetas.
-
-### Home:
-Aqui mostrara todas las recetas, en paginas, es decir usar una libreria para
-mostrar gran cantidad de elementos.
-
-### Elemento:
-Cada receta tendra una imagen demostrativa, una descripcion.
-Y la receta, si es *propia o no*, ademas si es nesesario un enlace.
-
-### Busqueda avanzada
-Con etiquetas, se filtrara todos los productos.
-
-## Arquitectura BD
-Manejare una API en airteble o firebase. 
-
-### Estructura
-1. Titulo
-2. La receta es original.
-3. Resumen
-4. Imagen
-5. Ingredientes
-6. Paso a paso para elaborar a receta.
-7. Etiquetas.
+# Herramientas usadas
+Elaborada en REACT.
+Host en Netlify.
+Backend de Supabase.
 
 > [!TIP]
-> El diseño estara en FIGMA
+> Fue diseñado previamente en FIGMA
