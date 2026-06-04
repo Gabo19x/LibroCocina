@@ -7,6 +7,8 @@ import Paginacion from "../components/especificos/paginacion";
 import Comida from "../components/especificos/comida";
 import Buscador from "../components/especificos/buscador";
 
+import {useAuth} from "../context/Autenticar";
+
 import "../styles/home/home.css";
 
 export default function Home() {
@@ -18,9 +20,21 @@ export default function Home() {
             comida={record}
         />
     ));
+
+    const { user, profile, signOut, isAdmin } = useAuth()
     
     return(
         <>
+                {user ? (
+                    <>
+                        <p>Hola, {profile?.username}</p>
+                        {isAdmin && <p>Eres admin ✅</p>}
+                        
+                    </>
+                ) : (
+                    <p>No hay sesión activa</p>
+                )}
+
             <Header principal={true} />
         
             <main className="Home_main">
