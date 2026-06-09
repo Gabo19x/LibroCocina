@@ -142,96 +142,45 @@ button:hover {
   color: #202020;
 }
 
-.Card_comida_menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3019607843);
-  border: 1px solid rgb(231, 231, 231);
-  border-radius: 10px;
-  padding: 20px;
-  background-color: rgb(247, 247, 247);
+.Usuario header {
+  background-color: black;
+  background-image: url("../../assets/ImagenFondoComida.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  z-index: -1;
+  width: 110%;
+  height: 500px;
 }
-.Card_comida_menu h3 {
-  margin-bottom: 10px;
-}
-.Card_comida_menu div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.Card_comida_menu img {
-  max-height: 600px;
-  max-width: 600px;
-  -webkit-mask-image: linear-gradient(transparent 0.1%, black 5%);
-          mask-image: linear-gradient(transparent 0.1%, black 5%);
-}
-@media (max-width: 768px) {
-  .Card_comida_menu {
-    width: 100%;
-  }
-  .Card_comida_menu img {
-    max-height: 300px;
-    max-width: 300px;
-  }
-}
-
-.Contenedor_imagen {
+.Usuario section {
   position: relative;
-  display: inline-block;
-  margin-bottom: 20px;
-}
-.Contenedor_imagen img {
-  display: block;
-}
-.Contenedor_imagen p {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
-.Card_comida {
+  top: -250px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  padding: 0 100px;
+  gap: 20px;
+  padding: 60px;
+  background-color: rgb(231, 231, 231);
+  border-radius: 15px;
+  border-top: 5px solid rgba(190, 0, 0, 0.8078431373);
+  box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.644);
 }
-@media (max-width: 768px) {
-  .Card_comida img {
-    width: 100%;
-  }
-}
-.Card_comida h2 {
+.Usuario section h2 {
   font-family: "Rock Salt", cursive;
 }
-.Card_comida div:not(.TextoFormateado_parrafo) {
-  margin-bottom: 60px;
-}
-.Card_comida div:not(.TextoFormateado_parrafo) img {
-  max-height: 800px;
-}
-.Card_comida h3 {
-  margin-bottom: 20px;
-}
-.Card_comida .Card_comida_parrafoResumen {
-  width: 60%;
-}
-.Card_comida p:not(.Receta_publica, .Receta_propia, .TextoFormateado_parte) {
-  margin-bottom: 60px;
-}
-.Card_comida .TextoFormateado_parrafo {
+.Usuario section form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
 }
-.Card_comida hr {
-  height: 3px;
-  width: 80%;
-  background-color: #202020;
-  margin-top: 10px;
+.Usuario section form input {
+  width: 100%;
+  padding: 10px;
 }
-.Card_comida .Parrafo_recursos {
-  font-style: italic;
-}/*# sourceMappingURL=comida.css.map */
+.Usuario section form button {
+  margin: 20px 0;
+}
+.Usuario section form hr {
+  margin-bottom: 60px;
+}/*# sourceMappingURL=usuario.css.map */

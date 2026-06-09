@@ -1,0 +1,62 @@
+@import "../globales.scss";
+
+
+.Usuario {
+    
+
+
+    header {
+        @include ImagenBack("../../assets/ImagenFondoComida.svg", black);
+
+        width: 110%;
+        height: 500px;
+    }
+
+    section {
+        position: relative;
+        top: -250px;
+
+        display: flex;
+        flex-direction: column;
+        gap: $espacio-normal;
+
+        padding: $espacio-grande;
+
+        background-color: $color-gris;
+        border-radius: $borde;
+        border-top: 5px solid $color-primario-blur;
+
+        box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.644);
+
+        h2 {
+            font-family: $font-encabezado;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: $espacio-peque;
+
+            width: 100%;
+
+            input {
+                width: 100%;
+                
+                padding: $espacio-peque;
+
+            }
+            
+            button {
+                margin: $espacio-normal 0;
+            }
+
+            hr {
+                margin-bottom: $espacio-grande;
+            }
+        }
+
+        p {
+            
+        }
+    }    
+}

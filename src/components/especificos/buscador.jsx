@@ -27,15 +27,15 @@ export default function Buscador() {
         
         if(comida == "") {
             setFiltro(
-                <p className="Mensaje_cargando">❕ Busqueda poco especifica ❕</p>
+                <p className="Mensaje_cargando">❕ Busqueda poco especifica</p>
             );
         } else if(busqueda.length == 0) {
             setFiltro(
-                <p className="Mensaje_error ">❌ No se han encontrado recetas similares ❌</p>
+                <p className="Mensaje_error ">❌ No se han encontrado recetas similares</p>
             );
         } else if(busqueda.length >= 6) {
             setFiltro(
-                <p className="Mensaje_cargando">❕ Demasiados resultados, por favor sea más especifico ❕</p>
+                <p className="Mensaje_cargando">❕ Demasiados resultados, por favor sea más especifico</p>
             );
         } else {
             setFiltro(

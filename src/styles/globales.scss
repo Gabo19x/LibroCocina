@@ -91,8 +91,8 @@ br {
 }
 
 .Mensaje_error {
-    margin: $espacio-grande $espacio-normal;
-    padding: $espacio-normal;
+    margin: 0;
+    padding: $espacio-peque;
 
     display: block;
     background-color: $color-primario;

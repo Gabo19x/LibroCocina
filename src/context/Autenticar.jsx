@@ -42,12 +42,22 @@ export function AuthProvider({ children }) {
 
   // Registrarse
   async function signUp(email, password, username) {
-    const { error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: { data: { username } }
     })
-    return { error }
+    if (error) return { error }
+
+    const { error: profileError } = await supabase
+    .from('profiles')
+    .insert({
+      id: data.user.id,
+      username: username
+    })
+
+    return { error: profileError }
+
   }
 
   // Iniciar sesión

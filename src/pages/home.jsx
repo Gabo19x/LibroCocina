@@ -25,15 +25,6 @@ export default function Home() {
     
     return(
         <>
-                {user ? (
-                    <>
-                        <p>Hola, {profile?.username}</p>
-                        {isAdmin && <p>Eres admin ✅</p>}
-                        
-                    </>
-                ) : (
-                    <p>No hay sesión activa</p>
-                )}
 
             <Header principal={true} />
         
