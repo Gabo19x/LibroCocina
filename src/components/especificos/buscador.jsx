@@ -23,7 +23,7 @@ export default function Buscador() {
     function Buscar(e) {
         e.preventDefault();
 
-        const busqueda = data.filter((food) => food.get("Titulo").toLowerCase().includes(comida.toLowerCase()));     
+        const busqueda = data.filter((food) => food.title.toLowerCase().includes(comida.toLowerCase()));     
         
         if(comida == "") {
             setFiltro(
@@ -39,10 +39,10 @@ export default function Buscador() {
             );
         } else {
             setFiltro(
-                busqueda.map((record) => (
-                    <article className="Buscador_resultado" key={`Food-mini-${record.get("Id")}`}>
-                        <p>🥪 {record.get("Titulo")}</p>
-                        <button className="Boton_ver_mas_reducido" onClick={() => { VerComida(record.get("Id")); }}>➕</button>
+                busqueda.map((comida) => (
+                    <article className="Buscador_resultado" key={`Food-mini-${comida.id}`}>
+                        <p>🥪 {comida.title}</p>
+                        <button className="Boton_ver_mas_reducido" onClick={() => { VerComida(comida.id); }}>➕</button>
                     </article>
                 ))
             );

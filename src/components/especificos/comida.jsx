@@ -12,44 +12,48 @@ export default function Comida({tipo, comida}) {
         navegar(`/comida/${id}`);
     }
 
+    const esPublica = comida.tags?.includes("Publica")
+
     if(tipo) {
         return(
-            <section className='Card_comida_menu' key={`food-${comida.get("Id")}`}>
+            <section className='Card_comida_menu' key={`food-${comida.id}`}>
                 
-                <h3>{comida.get("Titulo")}</h3>
+                <h3>{comida.title}</h3>
                 
                 <div className='Contenedor_imagen'>
-                    <img src={comida.get("Imagen") == undefined ? "_" : comida.get("Imagen")[0].url} alt={comida.get("Titulo")} />
-                    <p className={ (comida.get("Receta") == "Receta publica") ? "Receta_publica": "Receta_propia" }> {comida.get("Receta")} </p>
+                    <img src={comida.image_url || "_"} alt={comida.title} />
+                    <p className={ (esPublica) ? "Receta_publica": "Receta_propia" }> {(esPublica) ? "Receta publica": "Receta propia"} </p>
                 </div>
 
-                <button className='Boton_ver_mas' onClick={() => { VerComida(comida.get("Id")); }}>Ver más</button>
+                <button className='Boton_ver_mas' onClick={() => { VerComida(comida.id); }}>Ver más</button>
             
             </section>
         );
     } else {
         return(
             <main className='Card_comida'>
-                <h2>{comida.get("Titulo")}</h2>
+                <h2>{comida.title}</h2>
 
                 <div className='Contenedor_imagen'>
-                    <img src={comida.get("Imagen") == undefined ? "_" : comida.get("Imagen")[0].url} alt={comida.get("Titulo")} />
-                    <p className={ (comida.get("Receta") == "Receta publica") ? "Receta_publica": "Receta_propia" } > {comida.get("Receta")} </p>
+                    <img src={comida.image_url || "_"} alt={comida.title} />
+                    <p className={ (esPublica) ? "Receta_publica": "Receta_propia" }> {(esPublica) ? "Receta publica": "Receta propia"} </p>
                 </div>
 
-                <h3>🏆 Resumen 🏆</h3>
-                <p className='Card_comida_parrafoResumen'>{comida.get("Resumen")}</p>
+                <h3>🏆 Resumen</h3>
+                <p className='Card_comida_parrafoResumen'>{comida.summary}</p>
 
-                <h3>🥗 Ingredientes 🥗</h3> 
-                <FormatearTexto texto={comida.get("Ingredientes")}/>
+                <h3>🥗 Ingredientes</h3> 
+                <FormatearTexto texto={comida.ingredients}/>
 
-                <h3>🛠 Metodo de elaboración 🛠</h3>
-                <FormatearTexto texto={comida.get("Elaboracion")}/>
+                <h3>🛠 Metodo de elaboración</h3>
+                <FormatearTexto texto={comida.steps}/>
                 <br />
 
                 <h3>💬 Etiquetas</h3>
                 {
-                    comida.get("Etiquetas").map((etiq) => (<span>{etiq}</span>))
+                    comida.tags?.map((tag, i) => (
+                        <span key={i}>{tag}</span>
+                    ))
                 }
             </main>
         );

@@ -1,36 +1,31 @@
 import {useEffect, useState} from 'react';
 import Airtable from "airtable";
+import {supabase} from "../supabaseClient";
 
 /* HOOK
-    Con los datos como la apikey y la tabla obtenemos todos los datos
-    de manera asincrona, para ser enviados.
+    Pide los datos a la tabla en supabase y los envia para ser usados
+    return: datos para usar; si esta cargando
 */
 function UseApi() {
     const [data, setData] = useState([]);
     const [cargando, setCargando] = useState(true);
 
     async function ObtenerApi() {
-        var base = new Airtable({apiKey: 'patAtVTS3lRliYFb8.b9ce397dfc35a03d7af03452452b00fa499b91a9b53166a6a1f747804a98e07a'}).base('app2Env04v5yXb0rt')
-        const tabla = base("Food");
-
-        async function GetRecords() {
-            const records = await tabla.select().firstPage();
-
-            setData(records);
-            setCargando(false);
-            
-        }
-        
-        GetRecords();
-    }
-
-    useEffect(() => {
         try {
-            ObtenerApi();
+            const {data, error}  = await supabase
+                .from("recipes").select("*").order("created_at", {ascending: false});
+
+            setData(data)
+            
         } catch (error) {
             console.log(error);
+            
+        } finally {
+            setCargando(false)
         }
-    }, []);
+    }
+    
+    useEffect(() => { ObtenerApi() }, [])
 
     return {data, cargando};
 }

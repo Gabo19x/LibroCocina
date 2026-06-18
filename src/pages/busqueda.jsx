@@ -19,19 +19,24 @@ export default function Busqueda() {
     }
 
     useEffect(() => {
-        const objs = data.filter((record) => {
-            const etiq = record.get("Etiquetas") || []
-            return etiq.includes(filtro)
-        }).map((record) => record.fields)
-        
-        setLista( objs.map((record) => (
+        if(!filtro) return
+
+        const resultados = data.filter((comida) => {
+            const tag = comida.tags || []
+            
+            return tag.includes(filtro)
+        })
+
+        setLista(
+            resultados.map((comida) => (
                 <ComidaAvanzada
-                    comida={record}
+                    key={comida.id}
+                    comida={comida}
                 />
             ))
         )
 
-    }, [filtro])
+    }, [filtro, data])
 
     return(
         <>
@@ -138,7 +143,7 @@ export default function Busqueda() {
                     <div className="Resultados">
                         {
                             ( cargando )
-                            ? <h3 className="Mensaje_cargando">...Cargando comida...</h3>
+                            ? <h3 className="Mensaje_cargando">Cargando comida...</h3>
                             : lista
                         }
                     </div>

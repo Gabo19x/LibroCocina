@@ -6,27 +6,29 @@ export default function ComidaAvanzada({comida}) {
     function VerComida(id) {
         navegar(`/comida/${id}`);
     }
-
-    console.log(comida);
     
+    console.log(comida.title);
+    const esPublica = comida.tags?.includes("Publica")
 
     return(
-        <section className='Card_comida_menu Avanzado' key={`food-${comida.Id}`}>
+        <section className='Card_comida_menu Avanzado' key={`food-${comida.id}`}>
                 
-            <h3>{comida.Titulo}</h3>
+            <h3>{comida.title}</h3>
             
             <div className='Contenedor_imagen'>
-                <img src={comida.Imagen == undefined ? "_" : comida.Imagen[0].url} alt={comida.Titulo} />
-                <p className={ (comida.Receta == "Receta publica") ? "Receta_publica": "Receta_propia" }> {comida.Receta} </p>
+                <img src={comida.image_url || "_"} alt={comida.title} />
+                <p className={ (esPublica) ? "Receta_publica": "Receta_propia" }> {(esPublica) ? "Receta publica": "Receta propia"} </p>
             </div>
 
             <div className='Contenedor_etiquetas'>
                 {
-                    comida.Etiquetas.map((etiq) => (<span>{` ▪ ${etiq} `}</span>))
+                    comida.tags?.map((tag, i) => (
+                        <span key={i}>• {tag}</span>
+                    ))
                 }
             </div>
 
-            <button className='Boton_ver_mas' onClick={() => { VerComida(comida.Id); }}>Visitar</button>
+            <button className='Boton_ver_mas' onClick={() => { VerComida(comida.id); }}>Visitar</button>
         
         </section>
     )

@@ -12,7 +12,7 @@ export default function ComidaPagina() {
     const [objFiltrado, setObjFiltrado] = useState([]);
 
     useEffect(() => {
-        const filtro = data.find((record) => record.get("Id") == id );
+        const filtro = data.find((comida) => comida.id == id );
         
         if(filtro) {
             setObjFiltrado(
