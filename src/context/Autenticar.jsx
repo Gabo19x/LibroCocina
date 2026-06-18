@@ -9,6 +9,7 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
   const [profile, setProfile] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [loadingProfile, setLoadingProfile] = useState(true)
 
   useEffect(() => {
     // Verificar si ya hay una sesión activa al cargar la app
@@ -23,7 +24,10 @@ export function AuthProvider({ children }) {
       (_event, session) => {
         setUser(session?.user ?? null)
         if (session?.user) fetchProfile(session.user.id)
-        else setProfile(null)
+        else { 
+          setProfile(null); 
+          setLoadingProfile(false) 
+        }
       }
     )
 
@@ -38,6 +42,7 @@ export function AuthProvider({ children }) {
       .eq('id', userId)
       .single()
     setProfile(data)
+    setLoadingProfile(false)
   }
 
   // Registrarse
@@ -49,11 +54,10 @@ export function AuthProvider({ children }) {
     })
     if (error) return { error }
 
-    const { error: profileError } = await supabase
-    .from('profiles')
-    .insert({
-      id: data.user.id,
-      username: username
+    // Llamar la función de Supabase en lugar del insert directo
+    const { error: profileError } = await supabase.rpc('create_user_profile', {
+      user_id: data.user.id,
+      user_username: username
     })
 
     return { error: profileError }
@@ -78,6 +82,7 @@ export function AuthProvider({ children }) {
     user,      // datos del usuario (email, id, etc.)
     profile,   // datos de tu tabla profiles (rol, username)
     loading,   // true mientras verifica la sesión
+    loadingProfile,
     signUp,
     signIn,
     signOut,

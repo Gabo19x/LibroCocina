@@ -1,0 +1,64 @@
+@import "../globales.scss";
+
+section {
+    margin: $espacio-peque $espacio-normal;
+}
+
+.AdminSeccionForm {
+    display:flex;
+    flex-direction: column;
+}
+
+.DetailsAdmin {
+
+    border: 2px solid $color-primario;
+    border-radius: $borde $borde 0 0;
+
+    summary {
+        margin: 0;
+        padding: $espacio-normal;
+
+        font-size: $tamaño-subtitulo;
+
+        background-color: $color-primario;
+        color: $color-gris;
+
+        border-radius: $borde $borde 0 0;
+    }
+}
+
+.FormularioReceta {
+    
+    display: flex;
+    flex-direction: column;
+    gap: $espacio-peque;
+
+    padding: $espacio-normal;
+    margin-left: $espacio-normal;
+
+    max-width: 70%;
+
+    label {
+        margin-top: $espacio-peque;
+    }
+
+    input, textarea {
+        width: 100%;
+        
+        padding: $espacio-peque;
+    }
+
+    select {
+        option {
+            font-size: $tamaño-parrafo;
+            padding: ($espacio-peque/2) 0;
+        }
+    }
+    
+    button {
+        margin: $espacio-normal 0;
+        width: 50%;
+    }
+
+    
+}

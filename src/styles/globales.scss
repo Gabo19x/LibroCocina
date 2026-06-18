@@ -67,6 +67,12 @@ br {
     }
 }
 
+.TextoAviso {
+    border-left: 5px solid $color-secundario-oscuro;
+    padding-left: $espacio-peque;
+    font-style: italic;
+}
+
 @mixin ImagenBack($url, $color) {
     background-color: $color;
     background-image: url($url);

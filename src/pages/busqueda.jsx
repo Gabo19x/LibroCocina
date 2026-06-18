@@ -53,8 +53,8 @@ export default function Busqueda() {
                             <option value="Cualquier momento">🍘 Cualquier momento</option>
                             <option value="Acompañante">🍞 Acompañante</option>
 
-                            <option value="Confort food">🌭 Confort food</option>
-                            <option value="Heavy food">🥘 Heavy food</option>
+                            <option value="Reconfortante">🌭 Reconfortante</option>
+                            <option value="Complicada">🥘 Complicada</option>
 
                             <option value="Vegetariano">🥗 Vegetariano</option>
                             <option value="Saludable">🧆 Saludable</option>

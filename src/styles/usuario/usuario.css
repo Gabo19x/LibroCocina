@@ -47,6 +47,12 @@ br {
   margin: 0;
 }
 
+.TextoAviso {
+  border-left: 5px solid #6db8ff;
+  padding-left: 10px;
+  font-style: italic;
+}
+
 .Mensaje_cargando {
   margin: 60px 20px;
   padding: 20px;
@@ -59,7 +65,7 @@ br {
 
 .Mensaje_error {
   margin: 0;
-  padding: 20px;
+  padding: 10px;
   display: block;
   background-color: #BE0000;
   color: white;

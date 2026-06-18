@@ -3,8 +3,6 @@
 
 .Usuario {
     
-
-
     header {
         @include ImagenBack("../../assets/ImagenFondoComida.svg", black);
 
@@ -53,10 +51,6 @@
             hr {
                 margin-bottom: $espacio-grande;
             }
-        }
-
-        p {
-            
         }
     }    
 }

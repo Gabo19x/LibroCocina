@@ -9,6 +9,7 @@ export function RutaPrivada({ children }) {
 
 // Ruta que requiere ser admin
 export function RutaAdmin({ children }) {
-  const { isAdmin } = useAuth()
+  const { isAdmin, loadingProfile } = useAuth()
+  if (loadingProfile) return null
   return isAdmin ? children : <Navigate to="/" />
 }

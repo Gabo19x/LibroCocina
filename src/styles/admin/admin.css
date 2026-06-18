@@ -148,64 +148,48 @@ button:hover {
   color: #202020;
 }
 
-.Home_main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 0 20px;
-}
-.Home_main .Home_main_parrafo {
-  margin-bottom: 60px;
-}
-.Home_main .Home_main_parrafo hr {
-  height: 3px;
-  background-color: #202020;
-  margin-top: 10px;
-}
-.Home_main .Home_main_grid {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 10px;
-}
-.Home_main .Home_main_grid .Paginacion {
-  grid-column: 1;
-  grid-row: 1;
-}
-.Home_main .Home_main_grid .Buscador {
-  grid-column: 2;
-}
-@media (max-width: 1680px) {
-  .Home_main .Home_main_grid {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
+section {
+  margin: 10px 20px;
 }
 
-.Paginacion h2 {
-  margin-bottom: 20px;
-}
-.Paginacion .Paginacion_flex {
+.AdminSeccionForm {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
-.Paginacion .Paginacion_flex .Paginacion_flex_elementos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+
+.DetailsAdmin {
+  border: 2px solid #BE0000;
+  border-radius: 15px 15px 0 0;
 }
-@media (max-width: 1400px) {
-  .Paginacion .Paginacion_flex .Paginacion_flex_elementos {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
+.DetailsAdmin summary {
+  margin: 0;
+  padding: 20px;
+  font-size: 20px;
+  background-color: #BE0000;
+  color: rgb(231, 231, 231);
+  border-radius: 15px 15px 0 0;
 }
-.Paginacion .Paginacion_flex .Paginacion_flex_pag {
-  margin-top: 60px;
-}/*# sourceMappingURL=home.css.map */
+
+.FormularioReceta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  margin-left: 20px;
+  max-width: 70%;
+}
+.FormularioReceta label {
+  margin-top: 10px;
+}
+.FormularioReceta input, .FormularioReceta textarea {
+  width: 100%;
+  padding: 10px;
+}
+.FormularioReceta select option {
+  font-size: 18px;
+  padding: 5px 0;
+}
+.FormularioReceta button {
+  margin: 20px 0;
+  width: 50%;
+}/*# sourceMappingURL=admin.css.map */

@@ -5,6 +5,9 @@ import ComidaPagina from "../pages/comidapage";
 import BusquedaAvanzada from "../pages/busqueda"
 import Login from "../pages/login"
 import Registro from "../pages/registro"
+import AdminPagina from "../pages/admin";
+import FormularioReceta from "../components/especificos/formularioReceta";
+
 import {RutaPrivada, RutaAdmin} from "./rutaProtegida"
 
 const rutas = createBrowserRouter([
@@ -35,14 +38,25 @@ const rutas = createBrowserRouter([
         path: "/registro",
         element: <Registro />
     },
+    {
+        path: "/admin",
+        element: <RutaAdmin> <AdminPagina /> </RutaAdmin>,
+        children: [
+            {
+                path: "crear",
+                element: <FormularioReceta/>
+            },
+            {
+                path: "editar/:id",
+                element: <FormularioReceta/>
+            }
+        ]
+    }
   // {
   //   path: "/favoritos",
   //   element: <RutaPrivada><Favoritos /></RutaPrivada>
   // },
-  // {
-  //   path: "/admin",
-  //   element: <RutaAdmin><AdminPanel /></RutaAdmin>
-  // }
+  // 
     
 ]);
 
