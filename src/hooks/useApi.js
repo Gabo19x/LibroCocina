@@ -1,5 +1,5 @@
-import {useEffect, useState} from 'react';
-import Airtable from "airtable";
+import {useCallback, useEffect, useState} from 'react';
+// import Airtable from "airtable";
 import {supabase} from "../supabaseClient";
 
 /* HOOK
@@ -10,7 +10,8 @@ function UseApi() {
     const [data, setData] = useState([]);
     const [cargando, setCargando] = useState(true);
 
-    async function ObtenerApi() {
+    const ObtenerApi = useCallback(async () => {
+        setCargando(true)
         try {
             const {data, error}  = await supabase
                 .from("recipes").select("*").order("created_at", {ascending: false});
@@ -23,11 +24,11 @@ function UseApi() {
         } finally {
             setCargando(false)
         }
-    }
+    }, []);
     
-    useEffect(() => { ObtenerApi() }, [])
+    useEffect(() => { ObtenerApi() }, [ObtenerApi])
 
-    return {data, cargando};
+    return {data, cargando, recargar: ObtenerApi};
 }
 
 export default UseApi;

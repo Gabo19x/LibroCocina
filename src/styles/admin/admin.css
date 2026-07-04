@@ -152,22 +152,27 @@ section {
   margin: 10px 20px;
 }
 
+.AdminSeccionInicial {
+  margin-bottom: 20px;
+}
+.AdminSeccionInicial p {
+  margin: 10px 0;
+}
+
 .AdminSeccionForm {
   display: flex;
   flex-direction: column;
 }
 
 .DetailsAdmin {
-  border: 2px solid #BE0000;
-  border-radius: 15px 15px 0 0;
+  border: 2px solid rgba(190, 0, 0, 0.8078431373);
 }
 .DetailsAdmin summary {
   margin: 0;
   padding: 20px;
   font-size: 20px;
-  background-color: #BE0000;
+  background-color: rgba(190, 0, 0, 0.8078431373);
   color: rgb(231, 231, 231);
-  border-radius: 15px 15px 0 0;
 }
 
 .FormularioReceta {
@@ -192,4 +197,35 @@ section {
 .FormularioReceta button {
   margin: 20px 0;
   width: 50%;
+}
+
+.AdminSeccionRecetas table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+.AdminSeccionRecetas th,
+.AdminSeccionRecetas td {
+  border: 1px solid rgb(231, 231, 231);
+  padding: 16px;
+  text-align: left;
+  vertical-align: middle;
+}
+.AdminSeccionRecetas th {
+  background-color: rgba(3, 190, 0, 0.7960784314);
+  font-weight: 600;
+}
+.AdminSeccionRecetas tbody tr:hover {
+  background-color: rgb(231, 231, 231);
+}
+.AdminSeccionRecetas td img {
+  width: 80px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+.AdminSeccionRecetas td:last-child button {
+  margin: 5px;
 }/*# sourceMappingURL=admin.css.map */
