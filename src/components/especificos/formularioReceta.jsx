@@ -28,9 +28,27 @@ export default function FormularioReceta() {
     }
 
     useEffect(() => {
-        if (esEdicion) {
-        // cargar datos de la receta para prellenar el formulario
+        if (!esEdicion) return;
+
+        async function CargarReceta() {
+            const {data, error} = await supabase
+                .from("recipes").select("*").eq("id", id).single();
+
+            if(error) {
+                console.log(error)
+                return
+            }
+
+            setTitulo(data.title)
+            setResumen(data.summary)
+            setImagen(data.image_url)
+            setIngredientes(data.ingredients)
+            setPasos(data.steps)
+            setEtiquetas(data.tags)
         }
+        
+        CargarReceta()
+        
     }, [id])
 
     async function CrearReceta(e) {
@@ -39,38 +57,54 @@ export default function FormularioReceta() {
         setError(null)
 
         try {
-            // 1. Subir la imagen a Storage
-            const file = imagen // el archivo del input type="file"
-            const fileName = `${Date.now()}-${file.name}`
+            let imageUrl = imagen
+            console.log(`1: ${imagen}; 2: ${imageUrl}`);
+            
+            // 1. Subir la imagen a Storage si se eligio nueva al editar
+            if(imagen instanceof File) {
+                const fileName = `${Date.now()}-${imagen.name}`
 
-            const { error: uploadError } = await supabase.storage
-            .from('imagenes')
-            .upload(fileName, file)
+                const { error: uploadError } = await supabase.storage
+                .from('imagenes')
+                .upload(fileName, imagen)
 
-            if (uploadError) throw uploadError
+                if (uploadError) throw uploadError
+                // 1.1 Obtener la URL pública de la imagen
+                const { data: urlData } = supabase.storage
+                .from('imagenes')
+                .getPublicUrl(fileName)
 
-            // 2. Obtener la URL pública de la imagen
-            const { data: urlData } = supabase.storage
-            .from('imagenes')
-            .getPublicUrl(fileName)
-
-            const imageUrl = urlData.publicUrl
-
-            // 3. Guardar la receta en la base de datos
-            const { error: insertError } = await supabase
-            .from('recipes')
-            .insert({
+                imageUrl = urlData.publicUrl
+            }
+            
+            // 2. Guardar la receta en la base de datos
+            const datosReceta = {
                 title: titulo,
                 summary: resumen,
                 ingredients: ingredientes,
                 steps: pasos,
                 tags: etiquetas,
                 image_url: imageUrl
-            })
+            }
 
-            if (insertError) throw insertError
+            if (imageUrl) datosReceta.image_url = imageUrl
+            
+            // 3. Si es editar receta o es crear receta nueva
+            if(esEdicion) {
+                const { error } = await supabase
+                .from('recipes').update(datosReceta).eq("id", id)
 
-            navegar('/admin')
+                if (error) throw error;
+            } else {
+                if (!imageUrl) throw new Error('La imagen es obligatoria')
+                
+                const { error: insertError } = await supabase
+                    .from('recipes').insert(datosReceta)
+
+                if (insertError) throw insertError
+            }
+
+            navegar('/admin/dashboard')
 
         } catch (err) {
             setError('❌ Hubo un error al crear la receta')
@@ -81,8 +115,8 @@ export default function FormularioReceta() {
     }
 
     return (
-
-        <details className="DetailsAdmin">
+        <section className="AdminSeccionForm">
+        <details className="DetailsAdmin" open>
             <summary>{esEdicion ? '⚠ Editemos la receta' : '⭐ Crea una nueva receta'}</summary>
 
             <form onSubmit={CrearReceta} className="FormularioReceta">
@@ -108,13 +142,20 @@ export default function FormularioReceta() {
                 >
                 </textarea>
 
-                <label htmlFor="imagen">Imagen</label>
+                <label htmlFor="imagen">Imagen {esEdicion && <span>(dejar vacío para mantener la actual)</span>}</label>
+                {esEdicion && !imagen && (
+                    <img
+                        src={imagen}
+                        alt="Imagen actual"
+                        width="120"
+                    />
+                )}
                 <input 
                     type="file"
                     id="imagen"
                     accept="image/*"
                     onChange={(e) => setImagen(e.target.files[0])}
-                    required 
+                    required={!esEdicion} 
                 />
 
                 <label htmlFor="ingredientes">Ingredientes</label>
@@ -166,7 +207,9 @@ export default function FormularioReceta() {
 
                 <button className="Boton_form" type="submit">{esEdicion ? 'Actualizar receta' : 'Crear receta'}</button>
             </form>
-        </details>
+        </details>     
+        </section>
+        
         
     )
 }
