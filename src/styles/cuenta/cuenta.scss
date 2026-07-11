@@ -1,0 +1,66 @@
+@import "../globales.scss";
+
+section {
+    margin: $espacio-peque $espacio-normal;
+}
+
+.SeccionCuenta {
+    border-radius: 0 10px 10px 0;
+    border-left: 5px solid $color-terciario-blur;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+
+    padding: $espacio-normal;
+
+    h2 { margin-bottom: $espacio-peque; }
+
+    div {
+        display: flex;
+        flex-direction: row;
+        gap: $espacio-normal;
+    }
+
+}
+
+.SeccionFavoritos {
+    margin-top: $espacio-grande;
+
+    h2 { margin-bottom: $espacio-peque; }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+    }
+
+    th,
+    td {
+        border: 1px solid $color-gris;
+        padding: 16px;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    th {
+        background-color: $color-terciario-blur;
+        font-weight: 600;
+    }
+
+    tbody tr:hover {
+        background-color: $color-gris;
+    }
+
+    td img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+    }
+
+    td:last-child {
+            
+        button {
+            margin: 5px;
+        }
+    }
+}

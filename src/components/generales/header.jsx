@@ -44,6 +44,7 @@ export default function Header({principal}) {
         return(
             <header className="Header_secundario">
                 <h2>El jardin culinario</h2>
+                <BotonesCuenta />
                 <button className='Boton_menu' onClick={() => { navegar("/") }}>Inicio</button>
             </header>
         );

@@ -5,6 +5,7 @@ import ComidaPagina from "../pages/comidapage";
 import BusquedaAvanzada from "../pages/busqueda"
 import Login from "../pages/login"
 import Registro from "../pages/registro"
+import Cuenta from "../pages/cuenta"
 import AdminPagina from "../pages/admin"
 import RecetasAdmin from "../components/especificos/recetasAdmin"
 import FormularioReceta from "../components/especificos/formularioReceta"
@@ -38,6 +39,10 @@ const rutas = createBrowserRouter([
     {
         path: "/registro",
         element: <Registro />
+    },
+    {
+        path: "/cuenta",
+        element: <RutaPrivada> <Cuenta/> </RutaPrivada>
     },
     {
         path: "/admin",
