@@ -180,6 +180,16 @@ header h3 {
   color: #BE0000;
   background-color: #BE0000;
 }
+.Header_principal .BotonesCuenta {
+  display: flex;
+  gap: 5px;
+}
+.Header_principal .BotonesCuenta button:first-child {
+  border-radius: 15px 0 0 15px;
+}
+.Header_principal .BotonesCuenta button:last-child {
+  border-radius: 0 15px 15px 0;
+}
 
 .Header_secundario {
   min-height: 200px;

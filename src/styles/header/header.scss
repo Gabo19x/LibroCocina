@@ -25,6 +25,19 @@ header {
         color: $color-primario;
         background-color: $color-primario;
     }
+
+    .BotonesCuenta {
+        display: flex;
+        gap: $espacio-peque/2;
+
+        button:first-child {
+            border-radius: 15px 0 0 15px;
+        }
+
+        button:last-child {
+            border-radius: 0 15px 15px 0;
+        }
+    }
       
 }
 
