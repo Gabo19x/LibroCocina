@@ -25,6 +25,7 @@ export default function RecetasAdmin() {
         return data.map(
             (receta) => (
                 <tr key={receta.id}>
+                    <td>{receta.id}</td>
                     <td>
                         <img
                             src={receta.image_url}
@@ -54,6 +55,7 @@ export default function RecetasAdmin() {
                     <table>
                         <thead>
                             <tr>
+                                <th>Id</th>
                                 <th>Imagen</th>
                                 <th>Título</th>
                                 <th>Resumen</th>

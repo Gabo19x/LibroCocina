@@ -222,6 +222,9 @@ button:hover {
 .Card_comida h3 {
   margin-bottom: 20px;
 }
+.Card_comida button {
+  margin-bottom: 20px;
+}
 .Card_comida .Card_comida_parrafoResumen {
   width: 60%;
 }

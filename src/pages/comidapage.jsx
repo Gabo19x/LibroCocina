@@ -1,5 +1,6 @@
 import {useParams} from "react-router-dom";
 import { useEffect, useState } from "react";
+import {supabase} from "../supabaseClient";
 
 import UseApi from "../hooks/useApi";
 import Header from "../components/generales/header";
@@ -8,24 +9,28 @@ import Comida from "../components/especificos/comida";
 
 export default function ComidaPagina() {
     const {id} = useParams();
-    const {data, cargando} = UseApi();
-    const [objFiltrado, setObjFiltrado] = useState([]);
+    const [cargando, setCargando] = useState(true)
+    const [objFiltrado, setObjFiltrado] = useState(null);
 
     useEffect(() => {
-        const filtro = data.find((comida) => comida.id == id );
-        
-        if(filtro) {
-            setObjFiltrado(
-                <Comida
-                    tipo={false}
-                    comida={filtro}
-                />
-            );
-        } else {
-            console.log("No se encontro la comida :C");
+        async function CargarReceta() {
+            setCargando(true)
+
+            const {data, error} = await supabase
+                .from("recipes").select("*").eq("id", id).single();
+
+            if(error) {
+                console.log("No se encontro la receta: ", error)
+            } else {
+                setObjFiltrado(data)
+            }
+
+            setCargando(false)
         }
 
-    }, [data]);
+        CargarReceta()
+
+    }, [id]);
 
     return(
         <>
@@ -34,7 +39,7 @@ export default function ComidaPagina() {
             {
                 (cargando)
                 ? <h3 className="Mensaje_cargando">🥪 Cargando comida...</h3>
-                : objFiltrado
+                : <Comida tipo={false} comida={objFiltrado} />
             }
 
             <Footer></Footer>
