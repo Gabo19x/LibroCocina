@@ -1,20 +1,56 @@
-# Mi jardín culinario
-## Objetivo de la pagina
-Es una pagina web la cual tiene como proposito **guardar recetas de cocina** de mi gusto o de mi autoria.
-Tambien que sea de facil acceso, y contara con inicio de sesion, con roles:
-- Admin: unico, puede crear, editar y eliminar recetas.
-- Usuario: podran ver y guardar favoritos.
+# 🍖 El Jardín Culinario
 
-## Ofrece
-Seccion general donde estan todas las recetas.
-Ademas de un sistema de: receta nueva y la mas votada.
-Cada receta tiene su propia pagina para ver como se hace (tiene foto, ingredientes y pasos).
-Tambien habra un sistema de busqueda: directa y por etiquetas.
+Aplicación web de recetas de cocina con sistema de autenticación, 
+roles de usuario y gestión completa de contenido, como: ver recetas, crear sesion, guardar favoritos, sistema de busqueda.
 
-# Herramientas usadas
-Elaborada en REACT.
-Host en Netlify.
-Backend de Supabase.
+🔗 **[Ver demo en vivo](https://mi-jardin-culinario.app/)**
 
-> [!TIP]
-> Fue diseñado previamente en FIGMA
+---
+
+## Funcionalidades
+
+- Catálogo de recetas con imagen, ingredientes y pasos.
+- Búsqueda directa y filtrado por etiquetas.
+- Sección de receta más reciente en el home.
+- Autenticación con email y contraseña, para crear sesion o usuario.
+- Sistema de favoritos para usuarios registrados.
+- Panel de administración para gestión de recetas *(solo admin)*.
+- Diseño responsive (Mobile First).
+
+## Roles
+
+| Rol | Permisos |
+|---|---|
+| Visitante | Ver recetas y buscar |
+| Usuario | Ver recetas + guardar favoritos |
+| Admin | CRUD completo de recetas |
+
+## Stack tecnológico
+
+- **Frontend:** React + Vite + SCSS
+- **Backend:** Supabase (PostgreSQL + Auth + Storage)
+- **Deploy:** Vercel
+- **Diseño:** Figma
+
+## Correr localmente
+
+1. Clona el repositorio
+   git clone https://github.com/tu-usuario/jardin-culinario.git
+
+2. Instala dependencias
+   npm install
+
+3. Crea un archivo .env.local con tus variables de Supabase
+   VITE_SUPABASE_URL=tu_url
+   VITE_SUPABASE_KEY=tu_anon_key
+
+4. Corre el proyecto
+   npm run dev
+
+## Variables de entorno necesarias
+
+| Variable | Descripción |
+|---|---|
+| VITE_SUPABASE_URL | URL del proyecto en Supabase |
+| VITE_SUPABASE_KEY | Anon key de Supabase |
+
