@@ -3,7 +3,7 @@
 Aplicación web de recetas de cocina con sistema de autenticación, 
 roles de usuario y gestión completa de contenido, como: ver recetas, crear sesion, guardar favoritos, sistema de busqueda.
 
-🔗 **[Ver demo en vivo](https://mi-jardin-culinario.app/)**
+🔗 **[Ver demo en vivo](https://mi-jardin-culinario.vercel.app/)**
 
 ---
 
