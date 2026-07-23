@@ -35,7 +35,6 @@ roles de usuario y gestión completa de contenido, como: ver recetas, crear sesi
 ## Correr localmente
 
 1. Clona el repositorio
-   git clone https://github.com/tu-usuario/jardin-culinario.git
 
 2. Instala dependencias
    npm install
